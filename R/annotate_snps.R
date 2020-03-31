@@ -29,7 +29,7 @@ annotate_snps <- function(snp_file,tissue_path_file,tissue_annotation_file,
   count <- 0
   for (i in 1:dim(tiss.df)[1]){
     tissue <- tiss.df$V1[i]; pth <- tiss.df$V2[i]
-    bed.df <- data.table::fread(file=pth,header=F,stringsAsFactors = F)
+    bed.df <- data.table::fread(file=pth,header=F,stringsAsFactors = F,sep="\t")
     for (a in unique(tiss.annot.df$V2)){
       count <- count + 1
       aname <- tissue%&%"."%&%a
@@ -43,7 +43,7 @@ annotate_snps <- function(snp_file,tissue_path_file,tissue_annotation_file,
   }
   for (i in 1:dim(gen.df)[1]){
     gannot <- gen.df$V1[i]; pth <- gen.df$V2[i]
-    bed.df <- data.table::fread(file=pth,header=F,stringsAsFactors = F)
+    bed.df <- data.table::fread(file=pth,header=F,stringsAsFactors = F,,sep="\t")
     for (a in unique(gen.annot.df$V1)){
       count <- count + 1
       sub.df <- dplyr::filter(bed.df,V4==a)
