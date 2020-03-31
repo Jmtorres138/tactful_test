@@ -1,0 +1,4 @@
+liver	Liver.chromatinStates.bed.gz
+islet	Islets.chromatinStates.bed.gz
+muscle	SkeletalMuscle.chromatinStates.bed.gz
+adipose	Adipose.chromatinStates.bed.gz
